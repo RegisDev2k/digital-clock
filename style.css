@@ -1,0 +1,186 @@
+/* Google fonts import link */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    background: linear-gradient(135deg, #DCEAF9, #F0F8FF, #B0C9E0);
+    overflow: hidden;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #E0F7FA, #B0E0E6, #87CEFA);
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+section.dark {
+    background: radial-gradient(circle, #1B1F23, #24292D, #323840);
+}
+
+section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    max-width: 600px;
+    width: 100%;
+    background: linear-gradient(145deg, #FFFFFF, #E4E4E4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    perspective: 1000px;
+}
+
+section .container:hover {
+    transform: rotateY(8deg) translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+section.dark .container {
+    background: linear-gradient(145deg, #3E434A, #323840);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+section .container .icons i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    background: linear-gradient(135deg, #24292D, #323840);
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+section .container .icons i:hover {
+    transform: rotate(360deg);
+    background: linear-gradient(135deg, #87CEFA, #87CEFA);
+}
+
+section.dark .container .icons i {
+    background: linear-gradient(135deg, #E4E4E4, #FFFFFF);
+    color: #323840;
+}
+
+.container .icons i.fa-sun {
+    opacity: 0;
+    pointer-events: none;
+}
+
+section.dark .container .icons i.fa-sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+section .container .time {
+    display: flex;
+    align-items: center;
+}
+
+.container .time .time-colon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.time .time-colon .am_pm {
+    position: absolute;
+    bottom: 0;
+    right: -45px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+section.dark .time .time-colon .am_pm {
+    color: #fff;
+}
+
+.time .time-colon .time-text {
+    height: 120px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(145deg, #E3F2FD, #F0F8FF);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+section .container:hover .time .time-colon .time-text {
+    transform: scale(1.1);
+}
+
+section.dark .time .time-colon .time-text {
+    background: linear-gradient(145deg, #1D2124, #24292D);
+}
+
+.time .time-colon .time-text,
+.time .time-colon .colon {
+    font-size: 38px;
+    font-weight: 700;
+    color: #333;
+}
+
+section.dark .time .time-text .num,
+section.dark .time .colon {
+    color: #fff;
+}
+
+.time .time-colon .colon {
+    font-size: 46px;
+    margin: 0 15px;
+    color: #333;
+}
+
+section.dark .time .time-colon .colon {
+    color: #fff;
+}
+
+.time .time-colon .time-text .text {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+section.dark .time .time-colon .text {
+    color: #fff;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+section .container {
+    animation: floating 6s infinite ease-in-out;
+}
